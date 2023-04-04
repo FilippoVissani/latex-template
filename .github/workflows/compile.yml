@@ -20,14 +20,6 @@ jobs:
         with:
           root_file: ${{ env.LATEX_ROOT }}.tex
           args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode -shell-escape
-          
-      - name: Get Version
-        id: get-version
-        run: echo "::set-output name=version::$(cat *.tex | python .github/scripts/compute-version.py)"
-
-      - name: Get Time
-        id: current-time
-        run: echo "::set-output name=time::$(date +'%Y-%m-%d-%H-%M')"
         
       - name: Create Release
         id: create-release
@@ -35,7 +27,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
-          tag_name: '${{ steps.get-version.outputs.version }}+${{ steps.current-time.outputs.time }}'
+          tag_name: ???
           
       - name: Upload Release Asset
         id: upload-release-asset
