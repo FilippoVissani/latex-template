@@ -1,6 +1,6 @@
 const config = require('semantic-release-preconfigured-conventional-commits')
 
-const releaseBranches = ["main"]
+const releaseBranches = ["master"]
 config.branches = releaseBranches
 config.plugins.push(
     ["@semantic-release/exec", {
