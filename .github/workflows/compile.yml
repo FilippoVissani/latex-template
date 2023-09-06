@@ -19,7 +19,7 @@ jobs:
           submodules: recursive
           
       - name: Compile latex
-        uses: xu-cheng/latex-action@v2
+        uses: xu-cheng/latex-action@v3
         with:
           root_file: thesis-main.tex
           args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode -shell-escape
