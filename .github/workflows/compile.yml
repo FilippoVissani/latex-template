@@ -23,7 +23,10 @@ jobs:
         with:
           root_file: thesis-main.tex
           args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode -shell-escape
-        
+          
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20.11.0'
       - name: Release
         env:
           GH_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
